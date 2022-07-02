@@ -38,7 +38,6 @@ async function run() {
             const result = await taskCollection.find(query).toArray();
             res.send(result)
         });
-        //gg
         //post requests
         app.post('/task', async (req, res) => {
             const task = { ...req.body, isCompleted: false };
