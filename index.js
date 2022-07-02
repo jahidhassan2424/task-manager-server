@@ -39,7 +39,6 @@ async function run() {
             res.send(result)
         });
 
-        //comnsdjkbfhuew
         //post requests
         app.post('/task', async (req, res) => {
             const task = { ...req.body, isCompleted: false };
