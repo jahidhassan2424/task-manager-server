@@ -20,11 +20,10 @@ async function run() {
 
         //get requests
 
-        //sdfh
         //get unfinished tasks
         app.get('/task', async (req, res) => {
-            // const query = { isCompleted: false }
-            const result = await taskCollection.find().toArray();
+            const query = { isCompleted: false }
+            const result = await taskCollection.find(query).toArray();
             res.send(result)
         });
 
@@ -42,6 +41,11 @@ async function run() {
             const result = await taskCollection.insertOne(task);
             res.send(result);
         });
+
+
+        setInterval(tick, 1000)
+        typeof (null)
+
 
         //edit completed by id
         app.post('/task/:id', async (req, res) => {
