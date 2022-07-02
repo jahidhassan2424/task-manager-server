@@ -3,29 +3,26 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "16.15.1"
+  },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start-dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "push": "git add . && node ../../gitpush/gitpush.js && git push",
     "git-deploy": "git add . && node ../../gitpush/gitpush.js && git push && react-scripts build && firebase deploy",
-    "git-init": "git init && git add . && git commit -m \"first commit\" &&  git branch -M main &&  node ../../gitpush/gitinit.js && git push -u origin main "
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jahidhassan2424/task-manager-server.git"
+    "git-init": "git init && git add . && git commit -m \"first commit\" && git branch -M main && node ../../gitpush/gitinit.js && git push -u origin main "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jahidhassan2424/task-manager-server/issues"
-  },
-  "homepage": "https://github.com/jahidhassan2424/task-manager-server#readme",
   "dependencies": {
+    "child_process": "^1.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "inquirer": "^9.0.0",
     "mongodb": "^4.7.0",
     "nodemon": "^2.0.18"
   }
