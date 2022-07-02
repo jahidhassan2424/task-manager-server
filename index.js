@@ -43,8 +43,7 @@ async function run() {
         });
 
 
-        setInterval(tick, 1000)
-        typeof (null)
+
 
 
         //edit completed by id
