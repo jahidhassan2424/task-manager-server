@@ -22,29 +22,20 @@ async function run() {
 
         //get unfinished tasks
         app.get('/task', async (req, res) => {
-            const query = { isCompleted: false }
-            const result = await taskCollection.find(query).toArray();
             res.send(result)
         });
 
         //get finished tasks
         app.get('/task/completed', async (req, res) => {
-            const query = { isCompleted: true }
-            const result = await taskCollection.find(query).toArray();
             res.send(result)
         });
         //post requests
         app.post('/task', async (req, res) => {
             const task = { ...req.body, isCompleted: false };
-            console.log(task);
             console.log(req.body);
             const result = await taskCollection.insertOne(task);
             res.send(result);
         });
-
-
-
-
 
         //edit completed by id
         app.post('/task/:id', async (req, res) => {
@@ -55,6 +46,14 @@ async function run() {
             }
             const result = await taskCollection.updateOne(filter, updateDoc);
             res.send(result)
+        });
+
+        //Delete requests
+        app.delete('/task/:id', async (req, res) => {
+            const { id } = req?.params;
+            const filter = { _id: ObjectId(id) }
+            const result = await taskCollection.deleteOne(filter);
+            res.send(result);
         });
 
 
