@@ -19,7 +19,6 @@ async function run() {
         console.log('DB Connected');
 
 
-        //comment
         //get requests
         app.get('/', async (req, res) => {
 
